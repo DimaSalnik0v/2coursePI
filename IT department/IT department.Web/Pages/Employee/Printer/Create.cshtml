@@ -1,0 +1,102 @@
+﻿@page
+@model IT_department.Web.Pages.Employee.Printer.CreateModel
+@{
+    var message = ViewData["Message"]?.ToString();
+    var ermessage = ViewData["erMessage"]?.ToString();
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<form method="post">
+    <h2 class = "mb-3">Добавление нового принтера:</h2>
+
+    @if (!string.IsNullOrWhiteSpace(ermessage))
+    {
+        <div class="alert-danger" role="alert">
+            @ermessage
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Название:</label>
+        <input type="text" Id="Input.name" class="form-control" asp-for="Input.name" />
+        <span asp-validation-for="Input.name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Цена:</label>
+        <input type="number" Id="Input.price" class="form-control" asp-for="Input.price" required/>
+        <span asp-validation-for="Input.price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Стоимость обслуживания:</label>
+        <input type="number" Id="Input.repair_cost" class="form-control" asp-for="Input.repair_cost" required/>
+        <span asp-validation-for="Input.repair_cost" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="Input.user_id">Пользователь:</label>
+        <select id="Input.user_id" asp-for="Input.user_id" class="form-control" required>
+            <option value="">Выберите пользователя:</option>
+            @foreach (var item in Model.userPr)
+            {
+                <option value="@item.Id">@item.name @item.surname (@item.login)</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="Input.state">Состояние:</label>
+        <select id="Input.state" asp-for="Input.state" class="form-control" required>
+            <option value="">Выберите состояние:</option>
+            @foreach (var item in Model.techno)
+            {
+                <option value="@item.Id">@item.condition_name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="Input.id_service_company">Обслуживающая компания:</label>
+        <select id="Input.id_service_company" asp-for="Input.id_service_company" class="form-control" required>
+            <option value="">Выберите обслуживающую компанию:</option>
+            @foreach (var item in Model.compa)
+            {
+            <option value="@item.Id_company">@item.company_name</option>
+            }
+        </select>
+
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class=" btn btn-primary">Добавить</button>
+            @if (!string.IsNullOrWhiteSpace(message))
+            {
+                <script>
+                    document.getElementById("Input.name").value = "";
+                    document.getElementById("Input.price").value = "";
+                    document.getElementById("Input.repair_cost").value = "";
+                    document.getElementById("Input.user_id").value = "";
+                    document.getElementById("Input.state").value = "";
+                    document.getElementById("Input.id_service_company").value = "";
+                </script>
+            }
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Employee/Printer/Index" role="button">Назад</a>
+        </div>
+    </div>
+</form>

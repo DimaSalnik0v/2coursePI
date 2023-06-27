@@ -1,0 +1,97 @@
+﻿@page
+@model IT_department.Web.Pages.Employee.Cartridge.CreateModel
+@{
+    var message = ViewData["Message"]?.ToString();
+    var ermessage = ViewData["erMessage"]?.ToString();
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<form method="post">
+    <h2 class="mb-3">Добавление нового картриджа:</h2>
+
+    @if (!string.IsNullOrWhiteSpace(ermessage))
+    {
+        <div class="alert-danger" role="alert">
+            @ermessage
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Название:</label>
+        <input type="text" Id="Input.name" class="form-control" asp-for="Input.name" />
+        <span asp-validation-for="Input.name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Цена:</label>
+        <input type="number" Id="Input.price" class="form-control" asp-for="Input.price" required />
+        <span asp-validation-for="Input.price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Стоимость обслуживания:</label>
+        <input type="number" Id="Input.repair_cost" class="form-control" asp-for="Input.repair_cost" required />
+        <span asp-validation-for="Input.repair_cost" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Стоимость заправки:</label>
+        <input type="number" Id="Input.refueling_price" class="form-control" asp-for="Input.refueling_price" required />
+        <span asp-validation-for="Input.refueling_price" class="text-danger"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label for="Input.printer_id">Совместимый принтер:</label>
+        <select id="Input.printer_id" asp-for="Input.printer_id" class="form-control" required>
+            <option value="">Выберите совместимый принтер:</option>
+            @foreach (var item in Model.print)
+            {
+                <option value="@item.Id">@item.name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="Input.state">Состояние:</label>
+        <select id="Input.state" asp-for="Input.state" class="form-control" required>
+            <option value="">Выберите состояние картриджа:</option>
+            @foreach (var item in Model.techno)
+            {
+                <option value="@item.Id">@item.state_name</option>
+            }
+        </select>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class=" btn btn-primary">Добавить</button>
+            @if (!string.IsNullOrWhiteSpace(message))
+            {
+                <script>
+                    document.getElementById("Input.name").value = "";
+                    document.getElementById("Input.price").value = "";
+                    document.getElementById("Input.repair_cost").value = "";
+                    document.getElementById("Input.refueling_price").value = "";
+                    document.getElementById("Input.printer_id").value = "";
+                    document.getElementById("Input.state").value = "";
+                </script>
+            }
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/employee/cartridge/Index" role="button">Назад</a>
+        </div>
+    </div>
+</form>

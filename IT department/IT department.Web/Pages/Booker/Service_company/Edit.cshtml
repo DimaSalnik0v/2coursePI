@@ -1,0 +1,69 @@
+﻿@page "{Id_company:int}"
+@model IT_department.Web.Pages.Booker.Service_company.EditModel
+@{
+    var message = ViewData["Message"]?.ToString();
+    var ermessage = ViewData["erMessage"]?.ToString();
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<form method="post">
+    <h2 class="mb-3">Редактирование информации о компании:</h2>
+
+    @if (!string.IsNullOrWhiteSpace(ermessage))
+    {
+        <div class="alert-danger" role="alert">
+            @ermessage
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">ID компании:</label>
+        <input type="text" Id="EditCompany.Id_company" class="form-control" asp-for="EditCompany.Id_company" readonly/>
+        <span asp-validation-for="EditCompany.Id_company" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Название:</label>
+        <input type="text" Id="EditCompany.company_name" class="form-control" asp-for="EditCompany.company_name" />
+        <span asp-validation-for="EditCompany.company_name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Юридический адрес:</label>
+        <input type="text" Id="EditCompany.legal_addres" class="form-control" asp-for="EditCompany.legal_addres" />
+        <span asp-validation-for="EditCompany.legal_addres" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Электронная почта:</label>
+        <input type="text" Id="EditCompany.company_email" class="form-control" asp-for="EditCompany.company_email" />
+        <span asp-validation-for="EditCompany.company_email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Контактный номер телефона:</label>
+        <input type="text" Id="EditCompany.telephone_number" class="form-control" asp-for="EditCompany.telephone_number" />
+        <span asp-validation-for="EditCompany.telephone_number" class="text-danger"></span>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class=" btn btn-primary">Сохранить</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Booker/Service_company/Index" role="button">Назад</a>
+        </div>
+    </div>
+</form>

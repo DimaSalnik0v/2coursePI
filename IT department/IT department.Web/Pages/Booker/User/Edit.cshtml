@@ -1,0 +1,99 @@
+﻿@page "{Id:int}"
+@model IT_department.Web.Pages.Booker.User.EditModel
+@{
+    var message = ViewData["Message"]?.ToString();
+    var ermessage = ViewData["erMessage"]?.ToString();
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<form method="post">
+    <h2 class="mb-3">Редактирование информации о пользователе:</h2>
+
+    @if (!string.IsNullOrWhiteSpace(ermessage))
+    {
+        <div class="alert-danger" role="alert">
+            @ermessage
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">ID пользователя:</label>
+        <input type="text" Id="EditUser.Id" class="form-control" asp-for="EditUser.Id" readonly />
+        <span asp-validation-for="EditUser.Id" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Логин:</label>
+        <input type="text" Id="EditUser.login" class="form-control" asp-for="EditUser.login" />
+        <span asp-validation-for="EditUser.login" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Пароль:</label>
+        <input type="text" Id="EditUser.pass" class="form-control" asp-for="EditUser.pass"/>
+        <span asp-validation-for="EditUser.pass" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Имя:</label>
+        <input type="text" Id="EditUser.name" class="form-control" asp-for="EditUser.name" />
+        <span asp-validation-for="EditUser.name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Фамилия:</label>
+        <input type="text" Id="EditUser.surname" class="form-control" asp-for="EditUser.surname" />
+        <span asp-validation-for="EditUser.surname" class="text-danger"></span>
+    </div>
+
+    @if (Model.EditUser.Id != 7)
+    {
+        <div class="mb-3">
+            <label for="EditUser.code_job_title">Должность:</label>
+            <select id="EditUser.code_job_title" asp-for="EditUser.code_job_title" class="form-control" required>
+                @foreach (var item in Model.techno)
+                {
+                    @if (item.Id != 777777)
+                    {
+                        <option value="@item.Id">@item.name_job_title</option>
+                    }
+                }
+            </select>
+        </div>
+    }
+    else
+    {
+        <div class="mb-3">
+            <label for="EditUser.code_job_title">Должность:</label>
+            <select id="EditUser.code_job_title" asp-for="EditUser.code_job_title" class="form-control" readonly>
+                @foreach (var item in Model.techno)
+                {
+                    @if (item.Id == 777777) // Id code booker
+                    {
+                        <option value="@item.Id">@item.name_job_title</option>
+                    }
+                }
+            </select>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class=" btn btn-primary">Сохранить</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Booker/User/Index" role="button">Назад</a>
+        </div>
+    </div>
+</form>

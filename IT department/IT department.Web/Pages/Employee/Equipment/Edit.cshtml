@@ -1,0 +1,86 @@
+﻿@page "{Id:int}"
+@model IT_department.Web.Pages.Employee.Equipment.EditModel
+@{
+    var message = ViewData["Message"]?.ToString();
+    var ermessage = ViewData["erMessage"]?.ToString();
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<form method="post">
+    <h2 class="mb-3">Редактирование информации о технике:</h2>
+
+    @if (!string.IsNullOrWhiteSpace(ermessage))
+    {
+        <div class="alert-danger" role="alert">
+            @ermessage
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">ID:</label>
+        <input type="text" Id="Input.Id" class="form-control" asp-for="Input.Id" readonly />
+        <span asp-validation-for="Input.Id" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Название:</label>
+        <input type="text" Id="Input.type_of_equipment" class="form-control" asp-for="Input.type_of_equipment" />
+        <span asp-validation-for="Input.type_of_equipment" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Цена:</label>
+        <input type="number" Id="Input.price" class="form-control" asp-for="Input.price" required />
+        <span asp-validation-for="Input.price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Стоимость обслуживания:</label>
+        <input type="number" Id="Input.repair_cost" class="form-control" asp-for="Input.repair_cost" required />
+        <span asp-validation-for="Input.repair_cost" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="Input.state">Состояние:</label>
+        <select id="Input.state" asp-for="Input.state" class="form-control" required>
+            <option value="">Выберите состояние:</option>
+            @foreach (var item in Model.techno)
+            {
+                <option value="@item.Id">@item.condition_name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="Input.id_service_company">Обслуживающая компания:</label>
+        <select id="Input.id_service_company" asp-for="Input.id_service_company" class="form-control" required>
+            <option value="">Выберите обслуживающую компанию:</option>
+            @foreach (var item in Model.compa)
+            {
+                <option value="@item.Id_company">@item.company_name</option>
+            }
+        </select>
+
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class=" btn btn-primary">Сохранить</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/employee/equipment/Index" role="button">Назад</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,12 @@
+﻿@page
+@using System.Data.SqlClient;
+@{
+    String id = Request.Query["Id"];
+    SqlConnection connection = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=byx;Integrated Security=True");
+    connection.Open();
+    SqlCommand cmd = new SqlCommand("DELETE FROM printers Where Id=@Id", connection);
+    cmd.Parameters.AddWithValue("@Id", id);
+    cmd.ExecuteNonQuery();
+
+    Response.Redirect("/employee/printer/index");
+}

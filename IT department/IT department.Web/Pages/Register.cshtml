@@ -1,0 +1,47 @@
+﻿@page
+@model IT_department.Web.Pages.RegisterModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h2 class="text-center">Добро пожаловать!</h2>
+            <h1 class="text-center">Авторизация</h1>
+
+            <form method="post">
+@*                <div asp-validation-summary="All" class="text-danger">
+
+                </div>*@
+                @if (!string.IsNullOrWhiteSpace(message))
+                {
+                    <div class="alert-danger" role="alert">
+                        @message
+                    </div>
+                }
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Model.login">Логин:</label>
+                    <input type="text" asp-for="Model.login" class="form-control" />
+                    <span asp-validation-for="Model.login" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="Model.pass">Пароль:</label>
+                    <input type="password" asp-for="Model.pass" class="form-control" />
+                    <span asp-validation-for="Model.pass" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

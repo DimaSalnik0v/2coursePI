@@ -1,0 +1,46 @@
+﻿@page
+@model IT_department.Web.Pages.Booker.Service_company.IndexModel
+@{
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<br>
+<h2 class="text-center">«Список обслуживающих компаний»</h2>
+<a class="btn btn-primary btn-sm" href="/booker/service_company/create">Добавить новую компанию</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID компании</th>
+            <th>Название</th>
+            <th>Юридич. адрес</th>
+            <th>Электронная почта</th>
+            <th>Номер телефона</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.companies)
+        {
+            <tr>
+                @if (item.Id_company != 1)
+                {
+                    <td>@item.Id_company</td>
+                    <td>@item.company_name</td>
+                    <td>@item.legal_addres</td>
+                    <td>@item.company_email</td>
+                    <td>@item.telephone_number</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/booker/service_company/Edit/@item.Id_company">Изм.</a>
+                        <a class="btn btn-danger btn-sm" href="/booker/service_company/Delete?id=@item.Id_company">Удалить</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

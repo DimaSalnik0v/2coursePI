@@ -1,0 +1,54 @@
+﻿@page
+@model IT_department.Web.Pages.Employee.Cartridge.IndexModel
+@{
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<br>
+<h2 class="text-center">«Список картриджей»</h2>
+<a class="btn btn-primary btn-sm" href="/employee/cartridge/create">Добавить новый картридж</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Стоимость обслуживания</th>
+            <th>Стоимость заправки</th>
+            <th>ID обслуживающей компании</th>
+            <th>Состояние</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.cartridges)
+        {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.name</td>
+                    <td>@item.price</td>
+                    <td>@item.repair_cost</td>
+                    <td>@item.refueling_price</td>
+                    @if (item.Printer.name == "Отсутствует")
+                    {
+                        <td>@item.Printer.name</td>
+                    }
+                    else
+                    {
+                        <td>@item.Printer.Id </td>
+                    }
+                    <td>@item.Cartridge_state.state_name</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/employee/cartridge/Edit/@item.Id">Изм.</a>
+                        <a class="btn btn-danger btn-sm" href="/employee/cartridge/Delete?Id=@item.Id">Удалить</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

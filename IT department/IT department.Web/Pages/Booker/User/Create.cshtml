@@ -1,0 +1,87 @@
+﻿@page
+@model IT_department.Web.Pages.Booker.User.CreateModel
+@{
+    var message = ViewData["Message"]?.ToString();
+    var ermessage = ViewData["erMessage"]?.ToString();
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<form method="post">
+    <h2 class="mb-3">Добавление нового пользователя:</h2>
+
+    @if (!string.IsNullOrWhiteSpace(ermessage))
+    {
+        <div class="alert-danger" role="alert">
+            @ermessage
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Логин:</label>
+        <input type="text" Id="Input.login" class="form-control" asp-for="Input.login" />
+        <span asp-validation-for="Input.login" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Пароль:</label>
+        <input type="text" Id="Input.pass" class="form-control" asp-for="Input.pass" />
+        <span asp-validation-for="Input.pass" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Имя:</label>
+        <input type="text" Id="Input.name" class="form-control" asp-for="Input.name" />
+        <span asp-validation-for="Input.name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Фамилия:</label>
+        <input type="text" Id="Input.surname" class="form-control" asp-for="Input.surname" />
+        <span asp-validation-for="Input.surname" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="Input.code_job_title">Должность:</label>
+        <select id="Input.code_job_title" asp-for="Input.code_job_title" class="form-control" required>
+            <option value="">Выберите должность:</option>
+            @foreach (var item in Model.techno)
+            {
+                @if (item.Id != 777777)
+                {
+                    <option value="@item.Id">@item.name_job_title</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class=" btn btn-primary">Добавить</button>
+            @if (!string.IsNullOrWhiteSpace(message))
+            {
+                <script>
+                    document.getElementById("Input.login").value = "";
+                    document.getElementById("Input.pass").value = "";
+                    document.getElementById("Input.name").value = "";
+                    document.getElementById("Input.surname").value = "";
+                    document.getElementById("Input.code_job_title").value = "";
+                </script>
+            }
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Booker/User/Index" role="button">Назад</a>
+        </div>
+    </div>
+</form>

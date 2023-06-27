@@ -1,0 +1,133 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = IT_department.Web
+build_property.RootNamespace = IT_department.Web
+build_property.ProjectDir = C:\Users\79526\Desktop\University\2\MyFuture\IT department\IT department.Web\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\79526\Desktop\University\2\MyFuture\IT department\IT department.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Booker/Export/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2VyXEV4cG9ydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Booker/Service_company/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2VyXFNlcnZpY2VfY29tcGFueVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Booker/Service_company/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2VyXFNlcnZpY2VfY29tcGFueVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Booker/Service_company/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2VyXFNlcnZpY2VfY29tcGFueVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Booker/Service_company/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2VyXFNlcnZpY2VfY29tcGFueVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Booker/User/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2VyXFVzZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Booker/User/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2VyXFVzZXJcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Booker/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2VyXFVzZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Booker/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2VyXFVzZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Cartridge/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcQ2FydHJpZGdlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Cartridge/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcQ2FydHJpZGdlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Cartridge/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcQ2FydHJpZGdlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Cartridge/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcQ2FydHJpZGdlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Equipment/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcRXF1aXBtZW50XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Equipment/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcRXF1aXBtZW50XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Equipment/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcRXF1aXBtZW50XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Equipment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcRXF1aXBtZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Printer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcUHJpbnRlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Printer/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcUHJpbnRlclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Printer/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcUHJpbnRlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Employee/Printer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVcUHJpbnRlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/79526/Desktop/University/2/MyFuture/IT department/IT department.Web/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-o2e2umo7o6

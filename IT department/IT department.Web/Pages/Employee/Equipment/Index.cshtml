@@ -1,0 +1,51 @@
+﻿@page
+@model IT_department.Web.Pages.Employee.Equipment.IndexModel
+@{
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<br>
+<h2 class="text-center">«Список зарегистрированного оборудования»</h2>
+<a class="btn btn-primary btn-sm" href="/employee/equipment/create">Добавить новое оборудование</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Стоимость обслуживания</th>
+            <th>Состояние</th>
+            <th>ID обслуживающей компании</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.equipments)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.type_of_equipment</td>
+                <td>@item.price</td>
+                <td>@item.repair_cost</td>
+                <td>@item.Technical_condition.condition_name</td>
+                @if (item.Service_company.Id_company == 1)
+                {
+                    <td>@item.Service_company.company_name</td>
+                }
+                else
+                {
+                    <td>@item.Service_company.Id_company </td>
+                }
+                <td>
+                        <a class="btn btn-primary btn-sm" href="/employee/equipment/Edit/@item.Id">Изм.</a>
+                    <a class="btn btn-danger btn-sm" href="/employee/equipment/Delete?Id=@item.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

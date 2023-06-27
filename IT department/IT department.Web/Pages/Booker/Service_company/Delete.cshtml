@@ -1,0 +1,12 @@
+﻿@page
+@using System.Data.SqlClient;
+@{
+    String id = Request.Query["id"];
+    SqlConnection connection = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=byx;Integrated Security=True");
+    connection.Open();
+    SqlCommand cmd = new SqlCommand("DELETE FROM service_companies Where Id_company=@Id_company", connection);
+    cmd.Parameters.AddWithValue("@Id_company", id);
+    cmd.ExecuteNonQuery();
+
+    Response.Redirect("/booker/service_company/index");
+}

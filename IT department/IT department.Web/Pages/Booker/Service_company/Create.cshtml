@@ -1,0 +1,72 @@
+﻿@page
+@model IT_department.Web.Pages.Booker.Service_company.CreateModel
+@{
+    var message = ViewData["Message"]?.ToString();
+    var ermessage = ViewData["erMessage"]?.ToString();
+}
+<style>
+    body {
+        background-image: url(https://bogatyr.club/uploads/posts/2023-01/thumbs/1674735471_bogatyr-club-p-svetlii-fon-dlya-saita-fon-pinterest-5.jpg);
+        background-size: cover;
+        justify-content: center;
+        background-repeat: no-repeat;
+    }
+</style>
+<form method="post">
+    <h2 class="mb-3">Добавление новой компании:</h2>
+
+    @if (!string.IsNullOrWhiteSpace(ermessage))
+    {
+        <div class="alert-danger" role="alert">
+            @ermessage
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(message))
+    {
+        <div class="alert-success" role="alert">
+            @message
+        </div>
+    }
+
+    <div class="mb-3">
+        <label class="form-label">Название:</label>
+        <input type="text" Id="Input.company_name" class="form-control" asp-for="Input.company_name" />
+        <span asp-validation-for="Input.company_name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Юридический адрес:</label>
+        <input type="text" Id="Input.legal_addres" class="form-control" asp-for="Input.legal_addres" />
+        <span asp-validation-for="Input.legal_addres" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Электронная почта:</label>
+        <input type="text" Id="Input.company_email" class="form-control" asp-for="Input.company_email" />
+        <span asp-validation-for="Input.company_email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Контактный номер телефона:</label>
+        <input type="text" Id="Input.telephone_number" class="form-control" asp-for="Input.telephone_number" />
+        <span asp-validation-for="Input.telephone_number" class="text-danger"></span>
+    </div>
+
+    <div class="row mb-3">
+        <div class ="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class=" btn btn-primary">Добавить</button>
+            @if (!string.IsNullOrWhiteSpace(message))
+            {
+                <script>
+                    document.getElementById("Input.company_name").value = "";
+                    document.getElementById("Input.legal_addres").value = "";
+                    document.getElementById("Input.company_email").value = "";
+                    document.getElementById("Input.telephone_number").value = "";
+                </script>
+            }
+        </div>  
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/Booker/Service_company/Index" role="button">Назад</a>
+        </div>
+    </div>
+</form>
